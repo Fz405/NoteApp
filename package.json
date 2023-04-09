@@ -2,9 +2,9 @@
   "name": "noteapi",
   "version": "1.0.0",
   "description": "Note API",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": { 
-    "start": "nodemon src/index.js"   
+    "start": "node src/server.js"   
   },
   "keywords": [],
   "author": "",
