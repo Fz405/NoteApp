@@ -5,6 +5,7 @@ const noteRouter = require("./routes/noteRoutes");
 const dotenv= require("dotenv");
 const cors= require("cors"); // this library is middleware...will add headers from api responses
 dotenv.config(); // read env file  make environment crossponding to variables to read ...make them system variables
+const port= process.env.PORT || 5000;
 const mongoose= require("mongoose");
 app.use(express.json()); // it convert req.body(which is in string form) to json
 // app.use((req,res,next)=>{   test middleware
@@ -18,5 +19,15 @@ app.use("/note", noteRouter);
 app.get("/",(req, res)=>{      // request will send to server for get method on root url
     res.send("Notes API from Faiza");
 }); 
+mongoose.connect(process.env.MONGO_URL)
+.then(()=>{
+    app.listen(port, ()=>{            //we are starting our server and telling him that run http request on port 500
+        // and perform mentioned function
+    console.log("Connecte with server on port no."+ port);
+});
+})
+.catch((error)=>{
+    console.log(error);
+})  // connecting moongoose database
 
 
