@@ -1,6 +1,6 @@
 const express= require("express");   // importing express library
 const app= express();             // we made application object with the help of express, app object is server application
-const userRouter = require("./routes/userroutes");// importing object here 
+const userRouter = require("./routes/userRoutes");// importing object here 
 const noteRouter = require("./routes/noteRoutes");
 const dotenv= require("dotenv");
 const cors= require("cors"); // this library is middleware...will add headers from api responses
